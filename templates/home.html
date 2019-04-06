@@ -6,9 +6,12 @@
             <input type="text" name="url-input">
             <input type="submit">
         </form>
-        {{results}}
-        <!-- {% for i in results %}
-        <li>{{i}}</li>
-        {% endfor %} -->
+        <img src="{{image_url}}">
+        <!-- {{results}} -->
+        <h6>
+        {% for i in results %}
+        <li>Name: {{i["name"]}} - Value: {{i["value"]}}</li>
+        {% endfor %}
+    </h6>
     </body>
 </html>

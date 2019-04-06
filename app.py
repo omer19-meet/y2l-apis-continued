@@ -29,12 +29,12 @@ def study_image():
       }
     ]}
 
-    response = requests.post(api_url, headers=headers, data=json.dumps(data))
+    response2 = requests.post(api_url, headers=headers, data=json.dumps(data))
     # response = response.content
     # response_dict = json.loads(response.content)
     # response_dict["outputs"][0]["data"]#["concepts"]#
-    response = response.content
-    return render_template('home.html', results=response)
+    response2 = json.loads(response2.content)
+    return render_template('home.html', results=response2["outputs"][0]["data"]["concepts"], image_url=image_url)
 
 if __name__ == '__main__':
     app.run(debug=True)
